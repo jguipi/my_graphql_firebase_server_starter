@@ -38,25 +38,40 @@ The data structure used in GraphQL on the other hand is very intuitive and famil
  
  6- Enjoy 😊!
  
- Iy you want to use Firebase :
+### Setup Firebase (Optional)
  1- Create a [Firebase](https://firebase.google.com/) account and follow the get started guide.
-  
+
  2- create a `.env` file at the root of your project and fill up these value with your firebase information:
   FIRESTORE_ADMIN_TYPE =
+  
   FIRESTORE_ADMIN_PROJECT_ID = 
+  
   FIRESTORE_ADMIN_PRIVATE_KEY_ID = 
+  
   FIRESTORE_ADMIN_PRIVATE_KEY = 
+  
   FIRESTORE_ADMIN_CLIENT_EMAIL =
+  
   FIRESTORE_ADMIN_CLIENT_ID = 
+  
   FIRESTORE_ADMIN_AUTH_URI = 
+  
   FIRESTORE_ADMIN_TOKEN_URI =
+  
   FIRESTORE_ADMIN_AUTH_PROVIDER_x509_CERT_URL =
+  
   FIRESTORE_ADMIN_CLIENT_x509_CERT_URL = 
+  
   API_KEY = 
+  
   AUTH_DOMAIN = 
+  
   DATABASE_URL = 
+  
   PROJECT_ID = 
+  
   STORAGE_BUCKET = 
+  
   MESSAGING_SENDER_ID = 
   
  3- Create your own GraphQL query, mutation and subscription :)
