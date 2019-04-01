@@ -125,7 +125,7 @@ query {
 - None
 
 ### Notice
-Later this server will be able to use other database SQL or NoSQL
+Later this server will be able to use other database SQL or NoSQL through  the core Facade
 
 ### Usefull VS code plugins
 - Color highlight
