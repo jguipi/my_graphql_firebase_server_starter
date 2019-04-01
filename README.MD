@@ -21,9 +21,34 @@ Firebase is a set of hosting services for any type of application (Android, iOS,
 
 GraphQL is a query language developed internally by Facebook in 2012 until its publication in 2015. It offers an alternative to the REST API. It proposes to the client to formulate the data structure in the query, while the same structure is returned by the server. Strongly typed, this language avoids the problems of insufficient data return (supernumerary) or supernumerary (supernumerary). Pairing with firebase allows to fill in the gaps of this one and provide a powerful backend.
 
-### Why that stack 
-GraphQL shines where Firebase falls short. Powerful data modeling, flexible and efficient queries and the open specification are all essential parts of GraphQL that are lacking with Firebase. Firebase is limited in his data modeling. Basically, all data is structured as a single, JSON that states the same data multiple times. What seems convenient at first results in unmanageable client code whenever you need to update data, as you have to keep track of all the references to the same data manually.
-The data structure used in GraphQL on the other hand is very intuitive and familiar to think about, as it is modelled as a graph. Using the IDL syntax we can easily describe our data model, called the GraphQL schema. The flexible query capabilities of GraphQL is one its main benefits. Queries are hierarchical, that means you can specify data requirements that mirror the graph structure.
+### Why this stack 
+GraphQL shines where Firebase falls short. Powerful data modeling, flexible and efficient queries and the open specification are all essential parts of GraphQL that are lacking with Firebase. Firebase is limited in his data modeling. Basically, all data is structured as a single, JSON that states the same data multiple times. What seems convenient at first results in unmanageable client code whenever you need to update data, as you have to keep track of all the references to the same data manually. The data structure used in GraphQL on the other hand is very intuitive and familiar to think about, as it is modelled as a graph. Using the IDL syntax we can easily describe our data model, called the GraphQL schema. Example :
+```
+type Tweet {
+  id: ID!
+  title: String!
+  author: User! @relation(name: "Tweets")
+}
+
+type User {
+  id: ID!
+  name: String!
+  tweets: [Tweet!]! @relation(name: "Tweets")
+}
+```
+
+The flexible query capabilities of GraphQL is one its main benefits. Queries are hierarchical, that means you can specify data requirements that mirror the graph structure. By Example, we might have a query to fetch all users and their tweets: 
+```
+query {
+  allUsers {
+    id
+    name
+    tweets {
+      title
+    }
+  }
+}
+```
 
 ### Setup
  1- [Download and Install the latest LTS version of nodeJS](https://nodejs.org/en/)
