@@ -1,0 +1,45 @@
+{
+	"name": "my_graphql_firebase_server_starter",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"debugser": "set DEBUG=express:* & nodemon --exec ts-node starter.js",
+		"server": "nodemon --exec ts-node starter.js",
+		"start": "tsc && node ./dist/src/app.js",
+		"test": "jest --coverage"
+	},
+	"author": "Juste Guipi",
+	"dependencies": {
+		"@types/graphql": "^14.2.0",
+		"@types/jest": "^24.0.11",
+		"apollo-server-express": "^2.4.8",
+		"body-parser": "^1.18.3",
+		"cookie-parser": "^1.4.4",
+		"dotenv": "^6.1.0",
+		"express": "^4.16.4",
+		"express-react-views": "^0.10.5",
+		"firebase": "^5.9.2",
+		"firebase-admin": "^7.2.0",
+		"graphql": "^14.2.1",
+		"jest": "^24.5.0",
+		"lodash": "^4.17.11",
+		"merge-graphql-schemas": "^1.5.8",
+		"react": "^16.5.2",
+		"react-dom": "^16.5.2",
+		"regenerator-runtime": "^0.13.2",
+		"ts-jest": "^24.0.1",
+		"typescript": "^3.4.1"
+	},
+	"devDependencies": {
+		"@babel/plugin-transform-regenerator": "^7.4.0",
+		"@types/node": "^11.12.2",
+		"babel-preset-env": "^1.7.0",
+		"babel-register": "^6.26.0",
+		"nodemon": "^1.18.10",
+		"ts-node": "^8.0.3",
+		"tslint": "^5.14.0",
+		"tslint-config-prettier": "^1.18.0"
+	}
+}

@@ -1,0 +1,60 @@
+stages:
+  - Build
+  - Test
+  - Stagging
+  - Production
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - node_modules/
+  - dist/
+
+build_app:
+  image: node:latest
+  stage: Build
+  tags:
+  - windows
+  before_script:
+  - call npm install
+  - call npm run build
+  script: 
+    - echo "Building the app"
+  only:
+    - master
+    - develop
+    - staged
+
+server_test:
+  image: node:latest
+  stage: Test
+  tags:
+  - windows
+  script: 
+    - echo "Testing server"
+    - call npm run test
+
+graphql_test:
+  image: node:latest
+  tags:
+  - windows
+  stage: Test
+  script: 
+    - echo "Testing GraphQL"
+    
+production:
+  image: ruby:latest
+  tags:
+  - windows
+  stage: Production
+  tags:
+  - ruby
+  - docker
+  - postgres
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=purplebox-server --api-key=$HEROKU_API_KEY
+  only:
+    - master
