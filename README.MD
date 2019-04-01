@@ -94,7 +94,7 @@ The data structure used in GraphQL on the other hand is very intuitive and famil
 - [Firebaes](https://firebase.google.com/docs/web/setup)
 
 ### More 
-- You can use [apollo engine](https://engine.apollographql.com/login) to keep metrics and debug your query. Add your APPOLO_ENGINE_KEY in the .env file.
+- You can use [apollo engine](https://engine.apollographql.com/login) to keep metrics and debug your query. Add your APPOLO_ENGINE_KEY constant in the `.env` file.
 
 ### Google Drive
 - None
