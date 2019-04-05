@@ -1,6 +1,8 @@
-export interface INoSQLFacade {
-	getNewID(): string;
-	getDoc(collectionRef: string, docID: string, queryList?: any): Promise<void>;
+import { FirestoreQueryObject } from './firebase/IFirebase';
+
+export interface INoSQL {
+	getNewID(collection: string): string;
+	getDoc(collectionRef: string, docID: string, queryList?: Array<FirestoreQueryObject>): Promise<void>;
 	getCollection(collectionRef: string): Promise<void>;
 	updateDoc(collectionRef: string, docID: string, data: Object): Promise<void>;
 	deleteDoc(collectionRef: string, docID: string): Promise<void>;
